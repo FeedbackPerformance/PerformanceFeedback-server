@@ -19,9 +19,11 @@ const createApp = () => {
     })
   )
 
-  app.use('/', routes)
+  app.use('/', (req, res) =>
+    res.send('Welcome to Performance Feedback Backend')
+  )
 
-  app.use('/', (req, res) => res.send('Holanda'))
+  app.use('/api/', routes)
 
   app.use((err, req, res, next) => {
     res.locals.message = err.message
