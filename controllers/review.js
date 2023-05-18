@@ -1,4 +1,4 @@
-const { Review, User, Category } = require('../models')
+const { Review, User, Category } = require('../models/index')
 
 const getReviews = async (req, res) => {
   const reviews = await Review.findAll({

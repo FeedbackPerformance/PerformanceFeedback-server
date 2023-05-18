@@ -1,4 +1,4 @@
-const { Country } = require('../models')
+const { Country } = require('../models/index')
 
 const getCountries = async (req, res) => {
   try {

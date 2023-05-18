@@ -1,4 +1,4 @@
-const { Position, User } = require('../models')
+const { Position, User } = require('../models/index')
 
 const getPositions = async (req, res, next) => {
   let positions

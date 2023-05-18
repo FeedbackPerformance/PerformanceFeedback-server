@@ -1,5 +1,5 @@
 const { ValidationError } = require('sequelize')
-const { Category } = require('../models')
+const { Category } = require('../models/index')
 
 const allCategory = async (req, res, next) => {
   try {

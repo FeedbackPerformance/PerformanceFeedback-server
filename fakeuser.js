@@ -1,25 +1,46 @@
-const { User } = require('./models')
+const {
+  User,
+  Team,
+  Review,
+  Position,
+  Office,
+  Indicator,
+  Country,
+  Category,
+} = require('./models')
 
-// User.truncate({ cascade: true, restartIdentity: true })
+const date = new Date()
 
 const fakeDataUsers = [
-  {
-    firstName: 'Marco',
-    lastName: 'Polo',
-    email: 'marco@mail.com',
-    fileNumber: 'AR-123',
-    shift: 'morning',
-    isAdmin: true,
-  },
-  {
-    firstName: 'Anacleto',
-    lastName: 'Perez',
-    email: 'anacleto@mail.com',
-    fileNumber: 'AR-123456',
-    shift: 'morning',
-  },
+  { name: 'Argentina', ISO: 'AR', createdAt: date, updatedAt: date },
+  { name: 'Brazil', ISO: 'BR', createdAt: date, updatedAt: date },
+  { name: 'Chile', ISO: 'CL', createdAt: date, updatedAt: date },
+  { name: 'Colombia', ISO: 'CO', createdAt: date, updatedAt: date },
+  { name: 'Ecuador', ISO: 'EC', createdAt: date, updatedAt: date },
+  { name: 'United States', ISO: 'US', createdAt: date, updatedAt: date },
+  { name: 'Mexico', ISO: 'MX', createdAt: date, updatedAt: date },
+  { name: 'Paraguay', ISO: 'PY', createdAt: date, updatedAt: date },
+  { name: 'Peru', ISO: 'PE', createdAt: date, updatedAt: date },
+  { name: 'Uruguay', ISO: 'UY', createdAt: date, updatedAt: date },
 ]
 
-fakeDataUsers.map(user => {
-  User.create(user)
-})
+async function seed() {
+  try {
+    await Country.bulkCreate([
+      { name: 'Argentina', ISO: 'AR', createdAt: date, updatedAt: date },
+      { name: 'Brazil', ISO: 'BR', createdAt: date, updatedAt: date },
+      { name: 'Chile', ISO: 'CL', createdAt: date, updatedAt: date },
+      { name: 'Colombia', ISO: 'CO', createdAt: date, updatedAt: date },
+      { name: 'Ecuador', ISO: 'EC', createdAt: date, updatedAt: date },
+      { name: 'United States', ISO: 'US', createdAt: date, updatedAt: date },
+      { name: 'Mexico', ISO: 'MX', createdAt: date, updatedAt: date },
+      { name: 'Paraguay', ISO: 'PY', createdAt: date, updatedAt: date },
+      { name: 'Peru', ISO: 'PE', createdAt: date, updatedAt: date },
+      { name: 'Uruguay', ISO: 'UY', createdAt: date, updatedAt: date },
+    ])
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+seed()

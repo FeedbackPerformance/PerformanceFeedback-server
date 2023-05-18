@@ -1,4 +1,4 @@
-const { User } = require('../models')
+const { User } = require('../models/index')
 const { generateToken } = require('../utils/token')
 
 const userLogin = async (req, res, next) => {
@@ -18,6 +18,7 @@ const userLogin = async (req, res, next) => {
       }
     )
   } catch (error) {
+    console.log(error)
     next(error)
   }
 }

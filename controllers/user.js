@@ -9,7 +9,7 @@ const {
   Office,
   Review,
   Sequelize,
-} = require('../models')
+} = require('../models/index')
 
 const allUser = async (req, res, next) => {
   let user
