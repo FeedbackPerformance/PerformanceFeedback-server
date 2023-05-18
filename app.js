@@ -21,7 +21,7 @@ const createApp = () => {
 
   app.use('/', routes)
 
-  app.use('/', (req, res) => res.sendStatus(404))
+  app.use('/', (req, res) => res.send('Holanda'))
 
   app.use((err, req, res, next) => {
     res.locals.message = err.message
