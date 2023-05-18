@@ -4,8 +4,10 @@ const express = require('express')
 const volleyball = require('volleyball')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
-
 const routes = require('./routes')
+require('dotenv').config()
+
+const ORIGIN = process.env.DEV_PD_ORIGIN
 
 const createApp = () => {
   const app = express()
@@ -15,7 +17,9 @@ const createApp = () => {
   app.use(
     cors({
       credentials: true,
-      origin: 'http://localhost:3000',
+      origin: ORIGIN,
+      methods: 'GET,POST,PUT,DELETE',
+      allowedHeaders: 'Content-Type,Authorization',
     })
   )
 
