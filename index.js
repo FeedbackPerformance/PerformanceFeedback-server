@@ -6,7 +6,7 @@ const db = require('./db')
 const port = process.env.PORT || 3001
 const app = createApp()
 
-db.sync({ force: true }).then(() => {
+db.sync({ force: false }).then(() => {
   console.log('Data Base Connect')
 
   app.listen(port, () => {
