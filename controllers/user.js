@@ -1,5 +1,5 @@
 const { generateToken } = require('../utils/token')
-
+const Sequelize = require('sequelize')
 const { ValidationError } = require('sequelize')
 const {
   User,
@@ -8,7 +8,6 @@ const {
   Category,
   Office,
   Review,
-  Sequelize,
 } = require('../models/index')
 
 const allUser = async (req, res, next) => {

@@ -1,4 +1,5 @@
-const { Office, Country, Sequelize } = require('../models/index')
+const { Office, Country } = require('../models/index')
+const Sequelize = require('sequelize')
 const errorInvalidCharacters = 'Caracteres no validos'
 const errorEmptyOfficeName = 'Nombre de oficina vacio'
 const errorTooManyCharacters = 'El nombre tiene muchos caracteres'
