@@ -1,15 +1,8 @@
 const { generateToken } = require('../utils/token')
 const { generateString } = require('../utils/randomString')
 const { ValidationError } = require('sequelize')
-const {
-  User,
-  Position,
-  Team,
-  Category,
-  Office,
-  Review,
-  Sequelize,
-} = require('../models')
+const { User, Position, Team, Category, Office, Review } = require('../models')
+const Sequelize = require('sequelize')
 
 const allUser = async (req, res, next) => {
   try {
