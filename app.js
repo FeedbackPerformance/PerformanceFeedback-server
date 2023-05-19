@@ -17,9 +17,7 @@ const createApp = () => {
   app.use(
     cors({
       credentials: true,
-      origin: ORIGIN,
-      methods: 'GET,POST,PUT,DELETE',
-      allowedHeaders: 'Content-Type,Authorization',
+      origin: 'http//localhost:3000',
     })
   )
 
